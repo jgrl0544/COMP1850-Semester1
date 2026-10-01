@@ -7,17 +7,18 @@ Name: Mohamad Ftayeh
 name = input("What is your name? ")
 print(f"Welcome to LeedsBank's savings calculator {name}!")
 
-
 # Ask the user to input an amount they want to save every month - this should be an integer.
 # Validate that they have entered an integer.
 
 monthlySavings = input("How much would you like to save this month?: ")
 
 if (not monthlySavings.isnumeric()):
-    print("Invalid value!")
+    print("Invalid amount!")
+
 
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
 # print this out for the user with a suitable message.
+
 else:
     MONTHS_PER_YEAR = 12
     yearlySavings = float(monthlySavings) * MONTHS_PER_YEAR

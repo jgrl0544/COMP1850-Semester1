@@ -1,16 +1,17 @@
-# To test that you can successfully download a file and upload it to gradescope
+num1Str = input("Please enter an integer value for 1: ")
+num2Str = input("Please enter an integer value for 2: ")
 
-# You are going to write a very simple program:
 
-# Ask a user to enter two numbers (one per input)
+if (num1Str.strip("-").isnumeric() and num2Str.strip("-").isnumeric()):
 
-# multiply those numbers together
+    num1 = float(num1Str)
+    num2 = float(num2Str)
 
-# print out the result
-
-# There is an extra point available for validating that they entered numbers!
-# Add to your code so that if they entered something other than an integer it prints
-# 'That is not a number' and exits.
-
-# Download your file, and upload it to the 'Week 1 Session 2 - Practice Upload' task on Minerva.
-# You will get some feedback - ensure you are passing the tests!
+    if (num1.is_integer() and num2.is_integer()):
+         result = num1 * num2
+         print(f"The result is {result}")
+    else:
+         print("That is not an integer")
+    
+else:
+     print ("That is not a number")
