@@ -16,7 +16,7 @@ def getMedian(floatList):
     
     else: 
         smallerIndex = round(listLength / 2) - 1
-        largerIndex = round(listLength / 2) + 1
+        largerIndex = round(listLength / 2)
         total = floatList[smallerIndex] + floatList[largerIndex]
         return total / 2
 
