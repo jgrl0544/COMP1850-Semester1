@@ -13,8 +13,13 @@ print(shopping)
 # We bought something, so remove it from list
 
 shopping.remove("eggs")
-print(shopping)
+# print(shopping)
 
 # Replace bananas with grapes
+shopping[shopping.index("bananas")] = "grapes"
 
 # Add yoghurt, just after milk
+milkIndex = shopping.index("milk")
+shopping.insert(milkIndex + 1, "yogurt")
+
+print(shopping)
