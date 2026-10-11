@@ -4,11 +4,20 @@ L = int(input("Length of sequence: ")) # this should be your only input
 
 
 # Your code for the Recaman Sequence
-# You should store the sequence in an appropriate data structure named 'sequence'
 
 
-# You may wish to use further output for testing purposes while you develop your code
+
+sequence = [] # will probably use a list due to it being a scalable ordered collection until i find another data structure to use.
+
+for step in range(L):
+    if (step == 0):
+        sequence.append(0)
+        continue
+    prev = sequence[step - 1]
+    diff = prev - step
+    if ((diff >= 0) and not (diff in sequence)):
+        sequence.append(diff)
+    else:
+        sequence.append(prev + step)
 
 [print(item) for item in sequence]    # this method is reasonably independent of the choice of data structure
-
-# The web page https://en.wikipedia.org/wiki/Recam%C3%A1n%27s_sequence shows about 80 numbers in the sequence

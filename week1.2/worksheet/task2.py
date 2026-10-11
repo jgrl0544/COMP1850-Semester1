@@ -4,10 +4,10 @@ from util import read_numbers
 import sys
 
 def getMean(list):
-      return sum(list) / len(list)
+    return sum(list) / len(list)
 
 def getMedian(list):
-    list = sorted(list) 
+    list = sorted(list)
     listLength = len(list)
 
     if (listLength % 2 == 1): # if odd
