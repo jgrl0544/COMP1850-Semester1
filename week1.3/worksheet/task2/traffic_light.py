@@ -15,7 +15,7 @@ state = "red"
 
 ticksPerCycle = sum(states.values())
 
-for systime in range(maxtime):
+for systime in range(systime, maxtime + 1):
     loctime = systime % ticksPerCycle # distance along current cycle
 
     for s, dur in states.items():
