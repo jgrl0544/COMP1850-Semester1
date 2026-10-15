@@ -4,6 +4,9 @@
 # You can use any of the .txt files to test this - or even make your own.
 
 # open and read the file
+with (open ("/workspaces/COMP1850-Semester1/week1.3/session2/task2/1_word_counter/story2.txt", "r") as handle):
+    print(len(handle.read().split()))
+
 
 # calculate the number of words
 # hint: you could use .split() to break up by spaces

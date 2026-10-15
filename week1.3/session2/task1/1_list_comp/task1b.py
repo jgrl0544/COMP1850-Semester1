@@ -11,7 +11,8 @@ for i in values:
     else:
         newval.append(i)
 
-print(newval)
 
 # write the list comprehension equivalent to the `for` loop
 
+newval = [2*x if x % 2 == 0 else x for x in values]
+print(newval)

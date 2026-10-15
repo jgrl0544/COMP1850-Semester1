@@ -5,6 +5,17 @@
 
 # Open a file called 'user_info.txt' for reading
 
+with open("/workspaces/COMP1850-Semester1/week1.3/session2/task3/1_user_info/user_info.txt", "a") as handle:
+    while True:
+        if (input("Input 0 to save and exit program, anything else to continue: ") == "0"): break
+        name = input("Name: ")
+        age = input("Age: ")
+        color = input("Fav Color: ")
+        handle.write(f"{name}, {age}, {color}\n")
+
+
+
+
 # Write each piece of information to the file, each on a new line.
 
 # Hints:
