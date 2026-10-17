@@ -13,8 +13,10 @@ for step in range(L):
     if (step == 0):
         sequence.append(0)
         continue
+    
     prev = sequence[step - 1]
     diff = prev - step
+
     if ((diff >= 0) and not (diff in sequence)):
         sequence.append(diff)
     else:
