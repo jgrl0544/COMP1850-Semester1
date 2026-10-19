@@ -10,6 +10,11 @@
 
 # function implementation
 
+"""
+Returns a tuple of two numbers, the first of which represents the number of uppercase characters and the second represents the number of lowercase characters in the string.
+Args:
+    The string whose characters are counted.
+"""
 def mystery_func(string):
     upper = 0
     lower = 0
@@ -34,5 +39,5 @@ print(mystery_func("ABC"))
 # Uncomment the lines of code one by one and run the program
 # to see if you are right?
 
-# print(mystery_func("X"))
-# print(mystery_func("[2, 3]"))
+print(mystery_func("X"))
+print(mystery_func("[2, 3]"))

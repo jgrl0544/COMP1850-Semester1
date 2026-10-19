@@ -33,6 +33,11 @@ def income_tax_calculator(annual_income):
         one decimal point. You can use the round() function,
         e.g round(tax, 1) 0.0 if annual_income is not a positive integer.
     """
+    personalAllowance = 12570
+    if (annual_income < personalAllowance): return 0.0
+    if (12571 < annual_income < 50270): return round(((annual_income - personalAllowance) * 0.2), 1)
+    if (50271 < annual_income < 125140): return round(((annual_income - personalAllowance) * 0.4), 1)
+    if (125140 < annual_income): return round(((annual_income - personalAllowance) * 0.45), 1)
 
 
 # Check if the following lines produce the correct output

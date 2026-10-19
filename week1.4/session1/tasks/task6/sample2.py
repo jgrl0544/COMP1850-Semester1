@@ -19,4 +19,4 @@ print(add_two_numbers(3, num2=4))
 print(add_two_numbers("3", "4"))
 
 # What happens if you try this? Uncomment the code to find out.
-# print(add_two_numbers("three", "four"))
+# print(add_two_numbers("three", "four")) # it tries to convert the string to a float in the function.
