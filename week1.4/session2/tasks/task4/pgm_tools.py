@@ -18,7 +18,7 @@ def readPGM( filename ):
     max_gray = int(data[1][0])
     pixels = [[int(data[2+i][j]) for j in range(width)] for i in range(height)] # nested list comprehension for pixel array
     
-    return width,height,max_gray,pixels   # tuple of PGM data
+    return width,height,max_gray,pixels  # tuple of PGM data
     
 def writePGM( filename, image ):
     '''
@@ -27,6 +27,19 @@ def writePGM( filename, image ):
     Output: None
     '''
     width,height,max_gray,pixels = image  # unpack the tuple
+
+
+    with open(filename, "w") as handle:
+        handle.write("P2" + "\n")
+        handle.write(f"{width} {height} \n")
+        handle.write(str(max_gray) + "\n")
+
+
+        for i in range(0, height):
+            message = ""
+            for j in range(0, width):
+                message += str(pixels[i][j]) + "  "
+            handle.write(message + "\n")
 
     # open a file for writing
     # write the data in PGM format
@@ -40,19 +53,22 @@ def invertPGM( image ):
     Input: image data
     Output: inverted image data
     '''
-    width,height,max_gray,pixels = image  # unpack the tuple
 
-    # your code
-    # create a new pixel array of inverted data 
-    inverted = []  # you can use a similar nested comprehension to the readPGM() function
+    width,height,max_gray,pixels = image  # unpack the tuple
+    inverted = pixels.copy()
+    for i in range(0, height):
+        for j in range(0, width):
+            inverted[i][j] = max_gray - inverted[i][j]
     
     return width,height,max_gray,inverted
 
 # code to test the PGM functions
 
-image = readPGM("images/feep.pgm")
+image = readPGM("/workspaces/COMP1850-Semester1/week1.4/session2/tasks/task4/images/feep.pgm")
 
-print(f"Image with width {image[0]} and height {image[1]}")
-print(f"{image[3]}")
+# print(f"Image with width {image[0]} and height {image[1]}")
+# print(f"{image[3]}")
 
 # write further code to test your own functions
+writePGM("/workspaces/COMP1850-Semester1/week1.4/session2/tasks/task4/images/feep2.pgm", image)
+writePGM("/workspaces/COMP1850-Semester1/week1.4/session2/tasks/task4/images/evilfeep.pgm", invertPGM(image))

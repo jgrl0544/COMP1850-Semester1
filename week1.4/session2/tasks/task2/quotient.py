@@ -18,9 +18,10 @@ def divide_and_remainder(dividend, divisor):
     """
 
     # complete your code here
-
+    quotient = dividend // divisor
+    remainder = dividend % divisor
     # Returning both quotient and remainder
-    return quotient, remainder
+    return (quotient, remainder)
 
 # Check if correct output is produced
 quotient, remainder = divide_and_remainder(10, 3)

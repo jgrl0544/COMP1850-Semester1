@@ -17,6 +17,25 @@ def most_frequent_string(votes):
         - None, None: if votes is empty.
     """
 
+    voteDict : dict[str, int] = {}
+
+    for index in votes:
+        voteDict[index] = voteDict.get(index, 0) + 1
+
+    mostKey = None
+    mostVal = 0
+
+    for key, value in voteDict.items():
+        if value > mostVal:
+            mostKey = key
+            mostVal = value
+
+    if (mostVal == 0): mostVal = None
+
+
+    return (mostKey, mostVal) 
+    
+
     # Your task is to complete the body of the function based on the details in the docstring.
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types

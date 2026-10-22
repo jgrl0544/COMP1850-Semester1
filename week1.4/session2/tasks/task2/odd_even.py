@@ -17,7 +17,16 @@ def odd_even(lstIntegers):
         list: A list containing [odd_count, even_count].
     """
 
-    # Complete your code here
+    evens = 0
+    odds = 0
+
+    for index in lstIntegers:
+        if index % 2 == 0:
+            evens += 1
+        else: 
+            odds += 1
+    return [odds, evens]
+
 
 
 # Check if correct output is produced
