@@ -1,17 +1,27 @@
 # Week 1.5, Session 1: Task 3
 
+import math
 class Point:
     """
     A Point in 2D space.
     """
 
-    # Add constructor here
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    # Add distance() method here
+    def distance(self):
+        return math.hypot(self.x, self.y)
 
-    # Add distance_to() method here
-    # (This will need a parameter representing another point)
-
-
+    def distanceTo(self, other):
+        diffX = other.x - self.x
+        diffY = other.y - self.y
+        return math.hypot(diffX, diffY)
 
 # Finally, add code here to demonstrate use of Point
+
+point = Point(0,0)
+otherPoint = Point(5,6)
+
+print(point.distance())
+print(point.distanceTo(otherPoint))
