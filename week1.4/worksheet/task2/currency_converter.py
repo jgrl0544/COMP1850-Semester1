@@ -19,7 +19,6 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     new_amount = amount * conversion_rate[from_currency][to_currency] # gets the value from the dictionary
-    
     new_amount = round(new_amount, 2) # rounds it as needed.
     new_amount = max(0, new_amount) # assigns 0 if it's the larger of the two numbers (new_amount is negative)
     
