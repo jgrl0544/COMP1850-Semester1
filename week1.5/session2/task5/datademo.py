@@ -5,3 +5,10 @@
 
 # Your program should display dataset size, mean and median,
 # followed by the individual values (using a for loop)
+
+import data
+
+exampleData = data.Dataset("/workspaces/COMP1850-Semester1/week1.5/session2/task5/exampleData.txt")
+print(len(exampleData))
+print(exampleData.mean())
+print(exampleData.median())

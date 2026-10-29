@@ -4,7 +4,7 @@ import geometry
 
 radius = 10 # the radius of the circle
 point = geometry.Point(5, 2) # the centre of the circle (Point object)
-circle = geometry.Circle(radius, point) # the  circle itself (Circle object)
+circle = geometry.Circle(radius, point) # the circle itself (Circle object)
 
 print(point)
 print(circle)

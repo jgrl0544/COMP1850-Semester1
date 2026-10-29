@@ -14,6 +14,10 @@ class Point:
         """
         Creates a Point, given x & y coordinates.
         """
+
+        if not (isinstance(x, float) or isinstance(x, int) and isinstance(y, float) or isinstance(y, int)):
+            raise TypeError("Only floats or ints can be supplied to a Point constructor.")
+
         self.x = x
         self.y = y
 
