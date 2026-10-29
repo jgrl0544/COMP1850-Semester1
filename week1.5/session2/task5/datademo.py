@@ -8,7 +8,7 @@
 
 import data
 
-exampleData = data.Dataset("C:/Users/oufta/Desktop/Repos/COMP1850-Semester1/week1.5/session2/task5/exampleData.txt")
+exampleData = data.Dataset("/workspaces/COMP1850-Semester1/week1.5/session2/task5/exampleData.txt")
 print(len(exampleData))
 print(exampleData.mean())
 print(exampleData.median())
