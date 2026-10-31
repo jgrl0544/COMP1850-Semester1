@@ -6,17 +6,17 @@ class Person:
     """
     A Person, with a name and a date of birth.
     """
-    def __init__(self, name, dob = date(2007, 2, 3)):
+    def __init__(self, name, birth = date(2007, 2, 3)):
         """
         Initializes a new Person object, given values for a name and date of birth.
         """
-        if (not (isinstance(name, str) and isinstance(dob, date))):
+        if (not (isinstance(name, str) and isinstance(birth, date))):
             raise TypeError("One or more fields are not of the correct datatype.")
         elif (len(name) == 0):
             raise ValueError("You must provide a non-empty name.")
         else:
             self.name = name
-            self.dob = dob
+            self.birth = birth
 
     def initials(self):
         """
@@ -28,13 +28,13 @@ class Person:
         initials = "".join([c[0].upper() for c in components])
         return initials
     
-    def isBirthday(self):
+    def is_birthday(self):
         """
         Checks if today is the Person's birthday (the day and month attributes of both are equal).
         """
         dateToday = date.today()
 
-        isDay = dateToday.day == self.dob.day
-        isMonth = dateToday.month == self.dob.month
+        isDay = dateToday.day == self.birth.day
+        isMonth = dateToday.month == self.birth.month
 
         return isDay and isMonth
