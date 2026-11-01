@@ -40,11 +40,11 @@ You don't need to format your output exactly like this.
 
 If you finish the above quickly, try doing one or more of these:
 
-- Add methods to `QuakeDataset` to find the deepest and weakest quakes
+- Add methods to `QuakeDataset` to find the deepest and weakest quakes. DONE
 
 - Add a method to `QuakeDataset` that prints the details of all quakes
-  in a neatly formatted table
+  in a neatly formatted table.
 
 - Add a method to `QuakeDataset` that displays the details of all quakes
   within a specified number of degrees of a specified longitude and
-  latitude
+  latitude. DONE
