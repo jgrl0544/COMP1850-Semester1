@@ -1,4 +1,4 @@
-from image import Image, ImageError # we don't even need  to do this; greyscaleimage and colourimage have it all!
+from image import Image, ImageError # we don't even need to do this; greyscaleimage and colourimage have it all!
 from greyscaleimage import GreyscaleImage
 from colourimage import ColourImage
 
