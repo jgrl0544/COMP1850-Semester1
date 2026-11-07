@@ -12,7 +12,6 @@ class ImageError(Exception):
     Exception for problems that may occur when working with Image subclass objects.
     """
 
-
 class Image(ABC):
     """
     A generic image. Cannot be instantiated.

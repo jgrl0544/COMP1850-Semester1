@@ -42,6 +42,7 @@ class Shape:
 class Circle(Shape):
 
     def __init__(self, radius, center, colour = "red"):
+        """ Constructs a Circle using the radius, center and colour (default: red) provided. """
         super().__init__(center, colour)
         self.set_radius(radius)
 
@@ -57,8 +58,11 @@ class Circle(Shape):
     def __str__(self):
         return f"{self.colour} circle, radius {self.radius}, at {self.position}"
 
+    
     def area(self):
+        """ Returns the area of this circle. """
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
+        """ Returns the circumference of this circle. """
         return math.pi * 2 * self.radius

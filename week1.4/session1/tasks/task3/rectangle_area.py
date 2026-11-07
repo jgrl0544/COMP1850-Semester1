@@ -9,5 +9,7 @@ def rectangle_area(length, width):  # define suitable input data
 print(f"Area is {rectangle_area(5, 10)}")   # provide suitable data matching your inputs
 
 def EvenNumbersUntil(end):
+    """ Prints every even number from 0 until the provided value to the console. """
+
     for index in range(0, end+1):
         if (index % 2 == 0): print(index)

@@ -11,6 +11,7 @@ class Dataset:
 
         If no file is specified, an empty Dataset is created.
         """
+        
         self.data = []
         if filename:
             self.load_data(filename)
@@ -21,6 +22,7 @@ class Dataset:
 
         Any existing data will be deleted.
         """
+
         self.data.clear()
         with open(filename, "r") as f:
             for line in f:

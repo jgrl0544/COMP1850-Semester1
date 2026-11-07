@@ -23,12 +23,14 @@ class Money:
         """
         Returns a string representation of this Money.
         """
+        
         return f"£{self.pounds}.{self.pence:02}"
 
     def __add__(self, other : Money):
         """
         Adds this Money to another Money, returning the total.
         """
+
         PENCE_PER_POUND = 100
 
         totalPence = self.pence + other.pence
