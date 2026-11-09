@@ -24,18 +24,17 @@ def test_add_invalid_type():
 
 
 def test_invalid_type_pence():
-    # complete the test implementation for 
-    # invalid type for pence
-    
+    with pytest.raises(TypeError) as ex:
+        m = Money(0, "ten trillion pence")
+    assert str(ex.value) ==  "pence must be an integer"   
+        
 
 def test_invalid_value_pence():
-    # complete the test implementation for 
-    # invalid value for pence
-    
+    with pytest.raises(ValueError) as ex:
+        m = Money(0, 100)
+    assert str(ex.value) == "pence must be in range 0-99"
 
-def test_valid_add():
-    # complete the test implementation for
-    # valid add between money objects
-    # Hint: you can compare using the __str()__ (
-    # e.g., str(m1 + m2) == "£2.04"
-    
+def test_valid_add():    
+    assert str(Money(0,0) + Money(50, 0)) == "£50.00"
+    assert str(Money(0,99) + Money(50, 0)) == "£50.99"
+    assert str(Money(1,99) + Money(50, 2)) == "£52.01"

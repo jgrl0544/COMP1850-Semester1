@@ -31,6 +31,9 @@ class Point:
         """
         return math.hypot(self.x - p.x, self.y - p.y)
 
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
 
 
 class Circle:
