@@ -38,8 +38,7 @@ def grade(mark):
 
     if (not isinstance(mark, int)):
         raise MarkError("The mark provided is of an invalid type.")
-    
-    if 0 <= mark < 40:
+    elif 0 <= mark < 40:
         return "Fail"
     elif 40 <= mark < 70:
         return "Pass"

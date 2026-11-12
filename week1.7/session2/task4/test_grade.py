@@ -29,4 +29,3 @@ if __name__ == "__main__":
     assert_MarkError(-1)
     assert_MarkError(101)
     assert_MarkError("50")
-    assert grade(100) == "Fail"
