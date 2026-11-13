@@ -22,16 +22,18 @@ class ColourImage(Image):
         different value as an argument after width and height.
 
         A maximum allowed value can be also be specified; if not provided,
-        it defaults to (R=255,G=255,B=255).
+        it defaults to 255.
         """
         if width < 1:
             raise ImageError("width cannot be < 1")
         if height < 1:
             raise ImageError("height cannot be < 1")
 
+        print("test")
         self.width = width
         self.height = height
-        self.max_value = maximum
+        print("jrrnf")
+        self.max_value = maximum, maximum, maximum
         self.pixels = [value] * (width * height)
 
     def _parse_magic_number(self, imgfile):
@@ -51,17 +53,21 @@ class ColourImage(Image):
 
             self.pixels.append((int(raw_parts[r]), int(raw_parts[g]), int(raw_parts[b])))
 
-
         if len(self.pixels) != self.width * self.height:
             raise ImageError("number of pixels doesn't match image dimensions")
 
-        if any(p < (0,0,0) or p > (self.max_value, self.max_value, self.max_value) for p in self.pixels):
-            raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})")
+        if any(p < (0,0,0) or p > self.max_value for p in self.pixels):
+            raise ImageError(f"pixel value outside allowed range ((0,0,0) to {self.max_value})")
 
     def _write_header(self, imgfile):
         print("P3", file=imgfile)
         print(self.width, self.height, file=imgfile)
         print(self.max_value, file=imgfile)
+
+    def _parse_max_value(self, imgfile):
+        line = imgfile.readline().strip()
+        self.max_value = (int(line), int(line), int(line))
+
 
     def _write_pixels(self, imgfile):
         for row in range(self.height):

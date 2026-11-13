@@ -34,6 +34,10 @@ class GreyscaleImage(Image):
         self.max_value = maximum
         self.pixels = [value] * (width * height)
 
+    def _parse_max_value(self, imgfile):
+        line = imgfile.readline().strip()
+        self.max_value = int(line)
+
     def _parse_magic_number(self, imgfile):
         line = imgfile.readline().strip()
         if line != "P2":

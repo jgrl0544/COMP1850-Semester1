@@ -47,9 +47,9 @@ class Image(ABC):
         self.width = int(parts[0])
         self.height = int(parts[1])
 
+    @abstractmethod
     def _parse_max_value(self, imgfile):
-        line = imgfile.readline().strip()
-        self.max_value = int(line)
+        pass
 
     def __getitem__(self, index):
         """

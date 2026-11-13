@@ -8,5 +8,4 @@ print(image.pixels)
 image.write_pgm("C:/Users/oufta/Desktop/Repos/COMP1850-Semester1/week1.6/session2/images/simple2.ppm")
 
 image = ColourImage.read("C:/Users/oufta/Desktop/Repos/COMP1850-Semester1/week1.6/session2/images/simple.ppm")
-print(image.pixels)
 image.write_pgm("C:/Users/oufta/Desktop/Repos/COMP1850-Semester1/week1.6/session2/images/simple2.ppm")
