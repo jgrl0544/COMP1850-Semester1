@@ -19,35 +19,43 @@ def show_histogram_of_ramen_scores(data):
     '''
     Create a histogram to show the distribution of numbers of stars given to ramen.
     '''
-    plt.hist2d()
+    plt.hist(ramen_data["Stars"])
     plt.show()
-
-    pass
 
 def show_bar_chart_stars_per_manufacturer(data):
     '''
     Create a bar chart showing the average rating per manufacturer
     '''
-    pass
+
+    plt.bar(data["Manufacturer"], data.groupby("Manufacturer")["Rating"].mean())
+    plt.show()
 
 def show_bar_chart_stars_per_country(data):
     '''
     Create a bar chart showing the average rating per country
     '''
-    pass
+
+    plt.bar(data["Country"], data.groupby("Country")["Stars"].mean())
+    plt.show()
+
+    print(data["Country"], data.groupby("Country")["Stars"].mean())
 
 def find_best_per_country(data, country):
     '''
     Find and return the index of the row with the highest rating per country.
     If there are two with equal rating, you can return either.
     '''
-    pass
+    country_data = data[data["Country"] == country]
+    print(country_data.max())
+    
 
 def find_worst_per_country(data, country):
     '''
     Find and return the index of the row with the lowest rating per country.
     '''
-    pass
+
+    country_data = data[data["Country"] == country]
+    print(country_data.min())
 
 def show_piechart_of_manufacturers_by_country(data, country):
     '''
@@ -100,7 +108,7 @@ def menu():
 
 # the main program is below - complete the functions one at a time and test them!
 
-ramen_data = pd.read_csv("ramen-ratings.csv")
+ramen_data = pd.read_csv("/workspaces/COMP1850-Semester1/week1.8/session1/task4-combined/ramen-ratings.csv")
 
 while True:
     choice = menu()
