@@ -20,7 +20,7 @@ The `httpx.get(url)` method returns a `response` object that we can interrogate
 
 # Compare to command-line httpx
 
-What is the difference?
+What is the difference? 
 
 # Extension
 

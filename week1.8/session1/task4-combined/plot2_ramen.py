@@ -26,8 +26,9 @@ def show_bar_chart_stars_per_manufacturer(data):
     '''
     Create a bar chart showing the average rating per manufacturer
     '''
-
-    plt.bar(data["Manufacturer"], data.groupby("Manufacturer")["Rating"].mean())
+    data["Stars"] = pd.to_numeric(data["Stars"])
+    grouped_data = data.groupby("Brand")["Stars"].mean()
+    plt.bar(data["Brand"], grouped_data)
     plt.show()
 
 def show_bar_chart_stars_per_country(data):
@@ -108,8 +109,7 @@ def menu():
 
 # the main program is below - complete the functions one at a time and test them!
 
-ramen_data = pd.read_csv("/workspaces/COMP1850-Semester1/week1.8/session1/task4-combined/ramen-ratings.csv")
-
+ramen_data = pd.read_csv("C:/users/oufta/Desktop/Repos/COMP1850-Semester1/week1.8/session1/task4-combined/ramen-ratings.csv")
 while True:
     choice = menu()
     match choice:
