@@ -8,4 +8,8 @@ url = "https://httpbin.io/json"
 
 response = httpx.get(url)   # httpx object, get() method, returns a response object
 
-print(response.json())      # response object, json() method
+if response.status_code != 200:
+    print(f"Error code {response.status_code}.")
+
+else:    
+    print(response.json())      # response object, json() method
