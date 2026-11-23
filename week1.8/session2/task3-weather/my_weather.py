@@ -3,6 +3,7 @@ import httpx
 import pandas as pd
 import matplotlib.pyplot as plt
 import sys
+import sys
 
 def fahrenheit_to_celsius(f):
     return (f - 32) * (5/9)
@@ -63,4 +64,7 @@ plt.show()
 # note that temperature is in Farenheit (F)
 # convert to Celcius before plotting DONE
 
-# using the documentation explore other data, eg. rainfall
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 1.8) + 32
+
+# using the documentation explore other data, eg. rainfall  
